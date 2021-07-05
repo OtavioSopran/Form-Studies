@@ -1,0 +1,676 @@
+<!-- 
+
+     <form>
+    
+     - Elemento de que definirá um formulário 
+     - É um container estilo <section> <footer>
+         
+     Atributos básicos
+     - action
+     - method
+        
+ -->
+
+<!-- caso não tiver action e method no form então automaticamente vai ser linkado a mesma pagina como GET -->
+<form action="" method="">
+
+</form>
+
+<!-- essa é a forma que vai parecer na URL com o method GET e o method POST fica escondido -->
+<!-- http://minhapagina.com.br/?name=Maik&email=maik@maik.com -->
+
+
+
+<!-- 
+
+     <fieldset>
+    
+     - agrupamento de campos
+     - mesmo propósito
+     - semântico
+     - acessibilidade
+
+     Atributos especiais
+     - disabled
+         - desabilita todos os elementos internos
+         - não serão enviados ao submeter o formulário
+     - form
+         - o id de formulário ao qual esse fieldset pertence 
+         - não precisa estar dentro do formulário  
+     - name
+         - nome do grupo
+         
+     <legend>
+     - nome do agrupamento
+     - primeiro elemento dentro do fieldset        
+        
+ -->
+
+<form>
+    <fieldset>
+        <legend>
+            Contato
+        </legend>
+    </fieldset>
+</form>
+
+
+
+<!-- 
+
+     <label>
+    
+     - associar e identificar uma (ou mais) tag de entrada de dados
+     - acessibilidade 
+     - você poderá clicar para mudar o foco da entrada de dados 
+
+     Atributos 
+     - for
+         - para fazer a conexão entre este label e a tag de entrada de dados
+         - é feita via id do input
+         - só funciona com elementos específicos
+             - button, input (not hidden), meter, output, progrees, select, textarea
+         
+ -->
+
+<label>
+    Name:
+    <input type="text">
+</label>
+
+<!-- caso eu quiser por o input fora do label preciso linkar via id -->
+<label for="nome">Name:</label>
+<input id="nome" type="text">
+
+
+
+<!-- 
+
+     <button>
+    
+     - Representa um botão
+     - Usado para enviar formulários
+     - É estilizado pelo user agent
+
+     Atributos comuns
+     - type
+         - submit
+         - reset
+         - button
+     - autofocus
+     - disabled
+     - name
+     - value
+     - form
+              
+ -->
+<form id="id-linkado-ao-form" action=""></form>
+
+<button type="submit" name="button" value="alguma coisa" form="id-linkado-ao-form">
+    Enviar
+</button>
+
+
+
+<!-- 
+    # <datalist>
+
+    - Lista de valores como sugestão a uma tag <input>.
+    - Valores sugestivos e não obrigatórios
+    - Usuários poderão selecionar um dos valores, ou colocar um valor diferente da sugestão
+    
+    <datalist id="fruitsdata">
+        <option>apple</option>
+        <option>banana</option>
+        <option>mango</option>
+        <option>orange</option>
+        <option>cherry</option>
+    </datalist>
+
+    # list
+    - Recebe como valor o id de um <datalist> residente no mesmo documento
+
+    # Tipos de inputs suportados
+    - text, search, url, tel, email, date, month, week, time, datetime-local, number, range e color.
+
+    * Valores de datalis que não são compatíveis com o tipo do <input> não serão apresnetados.
+
+
+    # Tipos de inputs não suportados 
+    - hidden, password, checkbox, radio, file, ou qualquer tipo de button
+
+    # User agent
+    Verificar compatibilidade com o browser https://caniuse.com
+
+ -->
+
+<input type="text" list="fruitsdata" placeholder="Escolha uma fruta" />
+
+<datalist id="fruitsdata">
+    <datalist id="fruitsdata">
+        <option>apple</option>
+        <option>banana</option>
+        <option>mango</option>
+        <option>orange</option>
+        <option>cherry</option>
+    </datalist>
+</datalist>
+
+
+
+<!-- 
+
+     <input>
+    
+     - Um dos mais usados em formulários
+     - Aceita os mais diversos tipos de dados 
+     - Um dos mais poderosos e complexos
+     - Elevado numero de combinações
+
+     Atributos 
+     - type
+     - name
+     - id
+    
+     <input type="text">
+     <input type="date">
+     <input type="number">
+     <input type="email">
+     <input type="file">
+     <input type="password">
+ -->
+
+<!-- <input> Atributos comuns
+    - autocomplete
+    - autofocus
+    - disabled
+    - readonly      (quase todos vão aceitar)
+    - value
+    - form          (quase todos vão aceitar)
+    - name
+    - required      (quase todos vão aceitar)
+    - placeholder   (password, search, tel, text, url)
+-->
+<!-- autocompletar baseado no histórico de preenchimento do navegador -->
+<input type="text" autocomplete="email">
+
+<!-- ao caregar a pagina o autofocus vai automaticamente começar piscar dentro do input e só pode ser um por pagina-->
+<input type="text" autofocus>
+
+<!-- desabilita o input -->
+<input type="text" disabled>
+
+<!-- qualquer coisa que quiser deixar escrito dentro do input -->
+<input type="text" value="qualquer">
+
+<!-- como já diz, somente leitura -->
+<input type="text" value="readonly" readonly>
+
+<!-- para linka via id com um form e precisa ter junto o name="" -->
+<input type="text" name="precisa-para-ter-o-form" form="para-linkar-via-id-com-um-form">
+
+<!-- significa que quando mandar esse formulário este será obrigatório (required) -->
+<input type="text" required>
+
+<!-- para por campo obrigatório que só aceita o que for especificado (email por exemplo) -->
+<input type="email" placeholder="Digite seu email">
+
+
+
+
+<!-- 
+    <input type="password"
+
+    - Colocar uma senha de maneira segura
+    - Esconde o que está sendo gigitado no campo
+    - O estilo da apresentação do campo, depende do User Agent
+
+    # Atributos
+
+    - minlenght / maxlenght
+        * O número mínimo e/ou máximo de caracteres para este campo 
+    - size
+        * O número aceitável de caracteres que esse campo deverá conter 
+    - pattern
+        * Expressão regular para validar o que está sendo digitado no campo
+        * Altamente recomendado o uso de padrão de sugurança alta de senhas 
+        * exemplo: queremos que a senha contenha caracteres hexadecimais com o limite de no mínimo 
+          4 e no máximo 8 caracteres
+              * pattern="[0-9a-fA-F]{4,8}"      
+
+    - placeholder
+        * Mostrar um exemplo de texto a ser digitado no campo
+
+    - readonly / disabled
+        * Atributo booleano indicando se o campo está habilitado ou não    
+
+    - required
+        * O campo será obrigatório
+        
+    - inputmode
+        * Poderá alterar o uso de teclado em smartphones
+        * exemplo: queremos que o cliente só adicione números
+             * inputmode="numeric"    
+
+    - autocomplete
+        * on: permite a sugestão de: new-password ou current-password
+        * off: desabilita a opção autocompletar
+        * new-password: o navegador poderá sugerir uma nova senha
+
+ -->
+<form action="">
+    <input type="password" minlength="4" maxlength="8" size="12" placeholder="Digite sua senha" required>
+    <button type="submit">Enviar</button>
+</form>
+
+
+
+<!-- 
+     <input type="email"
+
+     - Espera que o usuário digite um email
+     - Irá validar se o valor digita é um email
+     
+     # Atributos
+
+     - placeholder
+     - readonly / disabled
+     - value
+     - required
+
+     - multiple
+         * O campo irá receber um ou mais emails, separado por virgulas
+
+     - minlenght / maxlenght
+         * O mínimo e/ou máximo valor que o campo irá conter
+
+     - size 
+         * Valor numérico indicando quantos caracteres esse campo deveria conter,
+           modificando o tamnho do campo para o usuário  
+           
+     - pattern
+        * Uso de expressão regular para validar o campo
+        * exemplo: o usuário só poderá colocar email do domínio rocketseat.com.br
+              * pattern="[.+@rocketseat\.com\.br]"       
+
+     - list
+        * o id de uma tag <datalist> que está no mesmo documento
+        * <datalist> irá conter uma lista de valores pré definidos a fim de sugerir 
+          ao usuário, quais valores estão disponíveis 
+                 * Os valores do <datalist> que não forem compatíveis com o campo, não 
+                   serão apresentados como sugestão  
+
+  -->
+
+<form action="">
+    <input type="email" placeholder="Email">
+    <button type="submit">Enviar</button>
+</form>
+
+
+
+
+<!-- 
+     <input type="URL"
+
+     - Espera que o usuário digite uma URL
+     - Irá validar se o valor digitado é uma URL
+     
+     # Atributos
+
+     - placeholder
+     - readonly / disabled
+     - value
+     - required
+
+     - minlenght / maxlenght
+         * O mínimo e/ou máximo valor que o campo irá conter
+
+     - size 
+         * Valor numérico indicando quantos caracteres esse campo deveria conter,
+           modificando o tamnho do campo para o usuário  
+           
+     - pattern
+        * Uso de expressão regular para validar o campo
+        * exemplo: o usuário só poderá colocar domínio .com.br
+              * pattern="*\.com\.br\/.*"       
+
+     - list
+        * o id de uma tag <datalist> que está no mesmo documento
+        * <datalist> irá conter uma lista de valores pré definidos a fim de sugerir 
+          ao usuário, quais valores estão disponíveis 
+                 * Os valores do <datalist> que não forem compatíveis com o campo, não 
+                   serão apresentados como sugestão  
+
+     - spellcheck
+        * habilitar a verificação ortográfica para este input               
+
+  -->
+
+<form action="">
+    <input type="url" placeholder="http://exemple.com.br" pattern="*\.com\.br.*"
+        title="Somente domínios .com.br serão aceitos" required>
+    <button type="submit">Enviar</button>
+</form>
+
+
+
+<!-- 
+    <input type="file"/>
+
+    - Usuário poderá escolher 1 ou mais arquivos para enviar no formulário
+
+    # Atributos
+
+    - value
+        - contém arqivos a ser enviado
+    - accept
+        - descreve que tipos de arquivos serão aceitos
+        - exemplo: .doc, .docx, .pdf, audio/*, image/png, .png
+    - files 
+        - a lista de arquivo ou arquivos
+    - multiple
+        - permite o envio de múltiplos arquivos
+        
+    # Envio dos arquivos
+    Para envio dos arquivos o formulário deverá utilizar o método POST e o atributo     
+    enctype como "multipart/form-data"
+
+ -->
+
+<!-- só preciso usar o enctype="multipart/form-data" se for um input tipo file -->
+<form action="" method="post" enctype="multipart/form-data">
+    <!-- image/* significa que posso enviar somente arquivos de imagem de qualquer formato -->
+    <input type="file" accept="image/*">
+</form>
+
+
+
+<!-- 
+    <input type="color"/>
+
+    - Interface para selecionar cor
+    - Color picker
+
+    # Atributos
+    - value: RGB
+        - Se inválido, o preto será exibido
+    - list
+        * o id de uma tag <datalist> que está no mesmo documento 
+        * <datalist> irá conter uma lista de valores pré definidos a fim de sugerir
+          ao usuário, quais valores estão disponíveis    
+            * Os valores do <datalist> que não forem compatíveis com o campo, não 
+              serão apresentados como sugestão          
+ -->
+
+<input type="color" value="#00ff00">
+
+
+
+<!-- 
+     <input type="checkbox">
+
+     - Caixas que podem ser marcadas
+     - selecionar um valor para ser enviado
+     - Se não selecionado, não será enviado nenhum dado
+
+     # Atributos
+     - globais
+     - value
+         * valor que aquele campo comtém 
+         * se não estiver presente, o padrão é "on"
+     - checked
+         * para deixar o campo marcado por padrão
+
+  -->
+
+<!-- caso tenha marcado os dois lá no backend será recebido algo tipo interest=coding,music -->
+<fieldset>
+    <legend>Choose your interests</legend>
+    <div>
+        <input type="checkbox" name="interest" id="coding" value="coding" checked>
+        <label for="coding">Coding</label>
+    </div>
+    <div>
+        <input type="checkbox" name="interest" id="music" value="music" checked>
+        <label for="music">Music</label>
+    </div>
+</fieldset>
+
+
+<label for="subscribe">Receber notificações</label>
+<input type="checkbox" name="subscribe" id="subscribe" value="subscribed">
+<!-- value para a checkbox porque se não for marcada o backend recebe vazio -->
+
+
+
+<!-- 
+      <input type="hidden" id="timestamp" name="timestamp" value="1286705410"
+
+      - invisível ao usuário
+      - será enviado com o formulário
+      - não receberá o foco
+      - leitores de tela não percebem esse campo
+
+   -->
+<!-- lá no backend vou estar recebendo id=8 (exemplo de id de usuário) -->
+<input type="hidden" name="id" value="8">
+
+
+
+<!-- 
+    <input type="radio">
+
+    - Projetado para selecionar uma única opção de um grupo de opções
+
+    # Atributos essenciais
+    - checked
+        indica que o campo foi marcado
+    - value 
+        valor que aquele campo contém    
+
+ -->
+
+<fieldset>
+    <legend>Bora tomar um café?</legend>
+    <label for="yep">Sim</label>
+    <input type="radio" id="yep" name="coffee" value="yes">
+    <label for="nop">Não</label>
+    <input checked type="radio" id="nop" name="coffee" value="no">
+</fieldset>
+
+
+
+<!-- 
+     <textarea>
+     - mais de uma linha
+     - útil para textos grandes
+     
+     Atributos
+     - id
+     - name
+     - rows e cols
+     - maxlenght e minlenght
+     - wrap
+     .. outros comuns ao <input>s
+          - autocomplete, autofocus, disabled, placeholder, readonly, form, required
+
+  -->
+<label for="message">Mensagem</label>
+<textarea name="message" id="message" cols="30" rows="3"></textarea>
+<!-- o wrap já vem como padrão e só se usa ele se quiser deicar a caixa de texto com barra de rolagem -->
+<!-- <textarea wrap="off"></textarea> -->
+
+
+
+<!-- 
+    <select>
+    
+    - Controle que fornece um menu de opções
+    
+    <option>
+    
+    - Contém as opções a serem selecionadas 
+    - Atributos necessários
+        - value
+        
+    Atributos únicos
+    - multiple
+        Habilita múltiplas opções
+    - size
+        Quando opções visíveis?        
+ -->
+
+<label for="carselect">Qual o modelo do carro</label>
+<select name="carmodel" id="carselect">
+    <option value="">Selecione o modelo</option>
+    <option value="fiat">uno</option>
+    <option value="audi">A3</option>
+    <option value="ferrari">F50</option>
+</select>
+
+
+<!-- optgroup -->
+<label>Please choose one or more pets:
+    <!-- posso usar o multiple size="4" para ficar assim ou tirar e deixar com seta clicável de escolha -->
+    <select name="pets" multiple size="4">
+        <optgroup label="4-lagged pets">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster" disabled>Hamster</option>
+        </optgroup>
+        <optgroup label="Flying pets">
+            <option value="parrot">Parrot</option>
+            <option value="macaw">Macaw</option>
+            <option value="albatross" disabled>Albatross</option>
+        </optgroup>
+    </select>
+</label>
+
+
+
+<!-- 
+    <input type="serch"/>
+
+    - Para campos de busca
+    - É igual ao campo do tipo "text" mas poderá ser um pouco diferente dependendo do user agent
+
+    # Atributos
+
+    - list / <datalist>
+    - pattern
+    - aria-label
+
+ -->
+
+<datalist id="searchterms">
+    <option>Mac</option>
+    <option>Windows</option>
+    <option>Linux</option>
+</datalist>
+
+<form action="">
+    <!-- este aria-label="" é uma alternativa ao label -->
+    <input type="search" name="q" list="searchterms" placeholder="Digite se termo de busca" size="25"
+        aria-label="campo de pesquisa: Digite seu termo de busca">
+    <button>Search</button>
+</form>
+
+<!-- opção com o label usando o pattern -->
+<form action="">
+    <label for="">Pesquisar pelo ID</label>
+    <input type="search" name="id" pattern="[0-9{2}]" title="Digite o núnemro do ID">
+    <button>Pesquisar</button>
+</form>
+
+
+
+
+<!-- 
+    <input type="number"/>
+
+    - Entrada de números
+
+    # Atributos
+    - min/max
+    - step
+    
+    - Posso usar também outros atributos como list, placeholder, onlyread... 
+
+ -->
+
+<input type="number" min="100" max="1000" step="100">
+
+
+
+
+<!-- 
+     <input type="range"
+
+     - Controle para selecionar um valor númerico
+     - Slider ou dial control
+
+     # Atributos
+
+     - min/max
+     - step
+  -->
+
+<input type="range" min="1" max="100" value="10" step="0.1">
+
+
+
+<!-- 
+      Outros campos interessantes 
+      (mas que ainda não tem ótimo suporte)
+
+      Fique de olho em https://caniuse.com
+   -->
+
+<input type="date">
+<input type="datetime-local">
+<input type="month">
+<input type="time">
+<input type="week">
+
+
+<!-- EXEMPLO DE FORMULÁRIO DE CONTATO -->
+
+<!-- 
+    Crie um formulário de contato
+
+    1. o formulário deverá conter um título de nome
+    Contato. Usar fieldset e legend para essa finalidade
+
+    2. O formulário conterá 3 campos
+         - nome (input text)
+         - email (input email)
+         - mensagem (textarea)
+
+    3. O formulário deverá conter um botão para Enviar
+    
+    Atenção: O formulário deverá conter regras de acessibilidade,
+             como o label para cada campo, por exemplo.
+ -->
+
+<form>
+    <fieldset>
+        <legend>Contato</legend>
+        <label for="name">Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br><br>
+
+        <label for="email">Email</label>
+        <br>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <label for="message">Mensagem</label>
+        <br>
+        <textarea name="message" id="message" cols="30" rows="3"></textarea>
+        <br><br>
+
+        <button>Enviar</button>
+    </fieldset>
+</form>
