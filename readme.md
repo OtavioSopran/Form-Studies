@@ -2,9 +2,9 @@
 
 ## Preparação de astronautas
 
-# - :heavy_check_mark: Formulários de outro planeta
+## - :heavy_check_mark: Formulários de outro planeta
 
-## - Estruturas                                  
+### - Estruturas                                  
 
 - Form     --------- 1              
 - Fieldst  --------- 24
@@ -12,7 +12,7 @@
 - Button   --------- 87
 - Datalist --------- 115
 
-## - Tags de entrada de dados
+### - Tags de entrada de dados
 
 - Input    --------- 163
 - Input atribut  --- 183
@@ -33,10 +33,22 @@
 - Data e hora ------ 623
 
 
-## EXEMPLO DE FORMULÁRIO DE CONTATO
+### Exemplo de formulário de contato
 
 - Crie um formulário de contato
 
+
+# :heavy_check_mark: Semantic
+## HTML que faz sentido, para todos
+### - Seções comuns
+- Header
+- Nav
+- Main
+- Article
+- Aside
+- Footer
+- Section 
+- Elementos genéricos não semânticos
 
 
 
