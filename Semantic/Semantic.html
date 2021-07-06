@@ -1,0 +1,198 @@
+<!-- 
+    Seções comuns em documentos HTML5 Boilerplate
+    
+    - cabeçalho <header>
+    - navegação <nav>
+    - conteúdo principal <main>
+    - barra lateral <aside>
+    - rodapé <footer>   
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        LOGO
+        <nav>
+            <ul>
+                <li>
+                    Item
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        Contúdo principal
+    </main>
+
+    <aside>
+        Parte lateral
+    </aside>
+
+    <footer>
+        Rodapé
+    </footer>
+
+</body>
+
+</html>
+
+<br><br>
+
+
+<!-- 
+     <header></header>
+
+     - Onde utilizar?
+        - Quando no início da página, é visto como global
+        - Pode ser usado em outro elementos semânticos como article, section
+        - header dentro de header ou footer?
+     - Múltiplos headers
+     - Não possui atributos específicos    
+
+ -->
+
+<body>
+    <!-- dentro do body no início -->
+    <header></header>
+
+    <section>
+        <!-- dentro de uma section ele é o header da section-->
+        <header></header>
+    </section>
+</body>
+
+<br><br>
+
+
+<!-- 
+     <nav></nav>
+
+     - Onde e porque utilizar
+     - Não possuem atributos específicos, somente os globais
+
+  -->
+
+<!-- geralmento vem dentro do header -->
+<header>
+    <nav></nav>
+</header>
+
+<!-- em article/section/header -->
+<article>
+    <section>
+        <header>
+            <nav></nav>
+        </header>
+    </section>
+</article>
+
+
+
+<!-- 
+      <main></main>
+      
+      - Onde e porque utilizar?
+      - Não possui atributos específicos, somente os globais
+   -->
+
+<!-- só pode ser usado uma vez na pagina e será dentro do body -->
+
+<body>
+    <!-- só uma vez na pagina inteira -->
+    <main></main>
+</body>
+
+
+
+<!-- 
+       <article></article>
+
+       - Onde e porque utilizar?
+       - Não possui atributos específicos, somente os globais
+
+    -->
+
+<main>
+
+    <h1>Receitas</h1>
+    <p>Esse é uma pagina de receitas</p>
+
+    <article>
+        <h2>Receita de torta de maça</h2>
+        <p>Esse é uma receita de torta de maça</p>
+    </article>
+
+    <article>
+        <h2>Receita de torta de limão</h2>
+        <p>Esse é uma receita de torta de limão</p>
+    </article>
+
+</main>
+
+<br><br>
+
+
+
+<!-- 
+    <aside></aside>
+
+    - Contúdos levemente relacionados ao conteúdo principal
+        - explicações
+        - glossários
+        - links extras
+        - biografia do autor
+        - informações do perfil
+    - Atributos: apenas globais
+    
+    Obs.: Não confundir com o sidebar
+ -->
+
+
+<!-- 
+     <footer></footer>
+
+     - Geralmente no final da página
+         - informações do autor, copyright, contato, sitemap, voltar ao topo
+     - atributos: globais  
+
+  -->
+
+<!-- 
+      <section></section>
+
+      - Onde e porque utilizar?
+      - Não possui atributos específicos, somente os globais
+
+  -->
+
+<!-- para por sessões na pagina e geralmente acompanhado de um título -->
+<section>
+    <h2>Contato</h2>
+    <p>Fale conosco</p>
+</section>
+
+
+<!-- 
+
+    Elementos não semânticos, para uso genéricos. 
+
+    <div></div>
+       usado se não conseguir achar um elemento de bloco semântico.
+
+    <span>
+       usado se não conseguir achar um elemento de texto semântico.  
+       
+    em ambas, use atributos globais como id e class para entrgar maior sgnificado
+       
+   -->
